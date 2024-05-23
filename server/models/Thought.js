@@ -20,7 +20,7 @@ const thoughtSchema = new Schema({
     get: (timestamp) => dateFormat(timestamp),
   },
   // midia: {
-  //   type: DataTypes.STRING,
+  //   type: String,
   //   allowNull: true,
   // },
   // this is where the code to hold video or photo url cloud sorage
