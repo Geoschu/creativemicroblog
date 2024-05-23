@@ -4,7 +4,7 @@ const dateFormat = require('../utils/dateFormat');
 const thoughtSchema = new Schema({
   thoughtText: {
     type: String,
-    required: 'You need to leave a thought!',
+    required: 'What is on your mind?',
     minlength: 1,
     maxlength: 280,
     trim: true,
@@ -19,6 +19,11 @@ const thoughtSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
+  // midia: {
+  //   type: String,
+  //   allowNull: true,
+  // },
+  // this is where the code to hold video or photo url cloud sorage
   comments: [
     {
       commentText: {
