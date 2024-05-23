@@ -14,7 +14,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "wingspan",
+    folder: "media",
     use_filename: true,
     overwrite: true,
   },
