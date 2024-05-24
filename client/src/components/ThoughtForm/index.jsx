@@ -11,7 +11,7 @@ const ThoughtForm = () => {
   const [thoughtText, setThoughtText] = useState('');
 
   const [characterCount, setCharacterCount] = useState(0);
-
+  // something like set media and mediaState for form submit
   const [addThought, { error }] = useMutation
   (ADD_THOUGHT, {
     refetchQueries: [
