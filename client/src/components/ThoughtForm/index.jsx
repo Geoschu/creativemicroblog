@@ -47,7 +47,7 @@ const ThoughtForm = () => {
       setCharacterCount(value.length);
     }
   };
-// this is where we will need to update react to handle url images within the upload and posting proccess...
+// this is where we will need to update react to handle url images within the upload and posting proccess... (daniel)
   return (
     <div>
       <h3>What's on your mind?</h3>

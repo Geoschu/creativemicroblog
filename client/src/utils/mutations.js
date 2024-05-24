@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client';
-
+// update this file to handle new media entries once we hook up cloudinary (daniel)
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
