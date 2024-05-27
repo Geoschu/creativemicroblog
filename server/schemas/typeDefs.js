@@ -11,6 +11,7 @@ const typeDefs = `
     _id: ID
     thoughtText: String
     thoughtAuthor: String
+    likes: Int!
     createdAt: String
     comments: [Comment]!
   }
@@ -42,6 +43,10 @@ const typeDefs = `
     addComment(thoughtId: ID!, commentText: String!): Thought
     removeThought(thoughtId: ID!): Thought
     removeComment(thoughtId: ID!, commentId: ID!): Thought
+    likeThought(thoughtId: ID!, userId: ID): Thought
+    unlikeThought(thoughtId: ID!, userId: ID): Thought
+    followUser(followerId: ID!, followedId: ID): User
+    unfollowUser(followerId: ID!, followedId: ID): User
   }
 `;
 
