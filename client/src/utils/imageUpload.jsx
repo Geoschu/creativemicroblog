@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { useState } from "react";
 
 // Set your cloud name and unsigned upload preset here:
@@ -93,16 +93,7 @@ const Chunked = () => {
       <button onClick={uploadFile} disabled={uploading}>
         {uploading ? "Uploading..." : "Upload"}
       </button>
-      {uploadComplete && cldResponse && (
-        <div>
-          <span className="left">
-            <p>Upload response:</p>
-            <pre>{JSON.stringify(cldResponse, null, 2)}</pre>
-          </span>
-        </div>
-      )}
     </>
   );
 };
-
 export default Chunked;
