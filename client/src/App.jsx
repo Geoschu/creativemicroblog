@@ -10,6 +10,7 @@ import { Outlet } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import LikeButton from './components/LikeButton';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -42,9 +43,15 @@ function App() {
         <Header />
         <div className="container">
           <Outlet />
+         <div className>
+          
+
+         </div> 
         </div>
         <Footer />
       </div>
+      
+      
     </ApolloProvider>
   );
 }

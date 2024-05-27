@@ -8,7 +8,8 @@
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "render-build": "npm install && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,7 @@
   },
   "dependencies": {
     "@cloudinary/react": "^1.13.0",
-    "@cloudinary/url-gen": "^1.19.0"
+    "@cloudinary/url-gen": "^1.19.0",
+    "mongoose": "^8.4.0"
   }
 }
