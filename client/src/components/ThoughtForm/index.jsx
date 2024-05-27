@@ -1,27 +1,21 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
 
-import { ADD_THOUGHT } from '../../utils/mutations';
-import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
-
-import Auth from '../../utils/auth';
+import { ADD_THOUGHT } from "../../utils/mutations";
+import { QUERY_THOUGHTS, QUERY_ME } from "../../utils/queries";
+import Chunked from "../../utils/imageUpload";
+import Auth from "../../utils/auth";
 
 
 
 const ThoughtForm = () => {
-  const [thoughtText, setThoughtText] = useState('');
+  const [thoughtText, setThoughtText] = useState("");
 
   const [characterCount, setCharacterCount] = useState(0);
   // something like set media and mediaState for form submit
-  const [addThought, { error }] = useMutation
-  (ADD_THOUGHT, {
-    refetchQueries: [
-      QUERY_THOUGHTS,
-      'getThoughts',
-      QUERY_ME,
-      'me'
-    ]
+  const [addThought, { error }] = useMutation(ADD_THOUGHT, {
+    refetchQueries: [QUERY_THOUGHTS, "getThoughts", QUERY_ME, "me"],
   });
 
   const handleFormSubmit = async (event) => {
@@ -35,7 +29,7 @@ const ThoughtForm = () => {
         },
       });
 
-      setThoughtText('');
+      setThoughtText("");
     } catch (err) {
       console.error(err);
     }
@@ -44,12 +38,12 @@ const ThoughtForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'thoughtText' && value.length <= 280) {
+    if (name === "thoughtText" && value.length <= 280) {
       setThoughtText(value);
       setCharacterCount(value.length);
     }
   };
-// this is where we will need to update react to handle url images within the upload and posting proccess... (daniel)
+  // this is where we will need to update react to handle url images within the upload and posting proccess... (daniel)
   return (
     <div>
       <h3>What's on your mind?</h3>
@@ -58,7 +52,7 @@ const ThoughtForm = () => {
         <>
           <p
             className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
+              characterCount === 280 || error ? "text-danger" : ""
             }`}
           >
             Character Count: {characterCount}/280
@@ -73,12 +67,12 @@ const ThoughtForm = () => {
                 placeholder="Here's a new thought..."
                 value={thoughtText}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: "1.5", resize: "vertical" }}
                 onChange={handleChange}
               ></textarea>
             </div>
 
-
+            <Chunked> </Chunked>
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
@@ -94,7 +88,7 @@ const ThoughtForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your thoughts. Please{' '}
+          You need to be logged in to share your thoughts. Please{" "}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}

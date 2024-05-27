@@ -23,7 +23,7 @@ export const ADD_USER = gql`
     }
   }
 `;
-
+// this is what we need to update to store the images with a post but we also need the ability to leave it blank in case no one wants to add a photo...
 export const ADD_THOUGHT = gql`
   mutation addThought($thoughtText: String!) {
     addThought(thoughtText: $thoughtText) {
