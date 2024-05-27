@@ -7,6 +7,8 @@ import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
+
+
 const ThoughtForm = () => {
   const [thoughtText, setThoughtText] = useState('');
 
@@ -75,6 +77,8 @@ const ThoughtForm = () => {
                 onChange={handleChange}
               ></textarea>
             </div>
+
+
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
