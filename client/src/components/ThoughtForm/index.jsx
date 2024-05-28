@@ -26,6 +26,7 @@ const ThoughtForm = () => {
         variables: {
           thoughtText,
           thoughtAuthor: Auth.getProfile().data.username,
+          file: url,
         },
       });
 

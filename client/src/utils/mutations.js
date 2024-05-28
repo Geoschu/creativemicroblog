@@ -31,6 +31,7 @@ export const ADD_THOUGHT = gql`
       thoughtText
       thoughtAuthor
       createdAt
+      file
       comments {
         _id
         commentText
