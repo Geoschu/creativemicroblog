@@ -19,10 +19,10 @@ const thoughtSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
-  // midia: {
-  //   type: String,
-  //   allowNull: true,
-  // },
+  file: {
+    type: String,
+    required: false,
+  },
   // this is where the code to hold video or photo url cloud sorage
   comments: [
     {
