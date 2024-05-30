@@ -45,7 +45,6 @@ const ThoughtForm = () => {
     }
   };
   // this is where we will need to update react to handle url images within the upload and posting proccess... (daniel)
-  const myPropString = "stringfu";
   return (
     <div>
       <h3>What's on your mind?</h3>
