@@ -101,39 +101,39 @@ const Chunked = () => {
 export default Chunked;
 
 // this might be a viable other method that would be more consistant with an mvp, ill work on implmentation in the morning... my eyes are too tired rn.
-// const uploadImage = () => {
-//   cloudinary.openUploadWidget(
-//     { cloudName: 'your-cloud-name', uploadPreset: 'your-upload-preset' },
-//     (error, result) => {
-//       if (result.event === 'success') {
-//         console.log('Image URL:', result.info.secure_url);
-//         // Save the URL to the state or pass it to a component
-//       }
-//     }
-//   );
-// };
-// import React, { useState } from 'react';
+const uploadImage = () => {
+  cloudinary.openUploadWidget(
+    { cloudName: 'your-cloud-name', uploadPreset: 'your-upload-preset' },
+    (error, result) => {
+      if (result.event === 'success') {
+        console.log('Image URL:', result.info.secure_url);
+        // Save the URL to the state or pass it to a component
+      }
+    }
+  );
+};
+import React, { useState } from 'react';
 
-// const ImageUpload = () => {
-//   const [imageUrl, setImageUrl] = useState('');
+const ImageUpload = () => {
+  const [imageUrl, setImageUrl] = useState('');
 
-//   const uploadImage = () => {
-//     cloudinary.openUploadWidget(
-//       { cloudName: 'your-cloud-name', uploadPreset: 'your-upload-preset' },
-//       (error, result) => {
-//         if (result.event === 'success') {
-//           setImageUrl(result.info.secure_url);
-//         }
-//       }
-//     );
-//   };
+  const uploadImage = () => {
+    cloudinary.openUploadWidget(
+      { cloudName: 'your-cloud-name', uploadPreset: 'your-upload-preset' },
+      (error, result) => {
+        if (result.event === 'success') {
+          setImageUrl(result.info.secure_url);
+        }
+      }
+    );
+  };
 
-//   return (
-//     <div>
-//       <button onClick={uploadImage}>Upload Image</button>
-//       {imageUrl && <img src={imageUrl} alt="Uploaded" />}
-//     </div>
-//   );
-// };
+  return (
+    <div>
+      <button onClick={uploadImage}>Upload Image</button>
+      {imageUrl && <img src={imageUrl} alt="Uploaded" />}
+    </div>
+  );
+};
 
-// export default ImageUpload;
+export default ImageUpload;
