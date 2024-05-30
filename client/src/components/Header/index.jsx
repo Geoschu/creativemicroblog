@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import Auth from '../../utils/auth';
+import Auth from "../../utils/auth";
+
+import banner from "../../assets/pixlit-header.svg";
 
 const Header = () => {
   const logout = (event) => {
@@ -12,9 +14,12 @@ const Header = () => {
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link className="text-light" to="/">
-            <h1 className="m-0">Creative Bloc</h1>
+            <img
+              src={banner}
+              alt="PixLit"
+              style={{ width: "500px", height: "170px" }}
+            />
           </Link>
-          <p className="m-0">Get out of your own head, and into someone else's.</p>
         </div>
         <div>
           {Auth.loggedIn() ? (
