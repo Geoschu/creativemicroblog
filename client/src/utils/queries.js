@@ -59,7 +59,7 @@ export const QUERY_ME = gql`
   }
 `;
 
-import { gql, useMutation } from '@apollo/client';
+//import { gql, useMutation } from '@apollo/client';
 
 const LIKE_POST = gql`
   mutation LikePost($postId: ID!, $userId: ID!) {
@@ -79,16 +79,16 @@ const DELETE_LIKE = gql`
   }
 `;
 
-function Like({ postId }) {
-  const [likePost] = useMutation(LIKE_POST);
-  const [unlikePost] = useMutation(DELETE_LIKE);
+// function Like({ postId }) {
+//   const [likePost] = useMutation(LIKE_POST);
+//   const [unlikePost] = useMutation(DELETE_LIKE);
 
-  const handleClick = async () => {
-    // Check if the current user has already liked the post
-    // Perform the like or unlike operation based on the current state
-    const result = await likePost({ variables: { postId, userId: "currentUserId" } });
-    // Update local state or UI accordingly
-  };
+//   const handleClick = async () => {
+//     // Check if the current user has already liked the post
+//     // Perform the like or unlike operation based on the current state
+//     const result = await likePost({ variables: { postId, userId: "currentUserId" } });
+//     // Update local state or UI accordingly
+//   };
 
-  return <button onClick={handleClick}>Like</button>;
-}
+//   return <button onClick={handleClick}>Like</button>;
+// }

@@ -11,6 +11,7 @@ const typeDefs = `
     _id: ID
     thoughtText: String
     thoughtAuthor: String
+    url: String
     likes: Int!
     createdAt: String
     comments: [Comment]!

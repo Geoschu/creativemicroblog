@@ -11,13 +11,13 @@ import Auth from "../../utils/auth";
 
 const ThoughtForm = () => {
   const [thoughtText, setThoughtText] = useState("");
-
+  const [url, setUrl] = useState("");
   const [characterCount, setCharacterCount] = useState(0);
   // something like set media and mediaState for form submit
   const [addThought, { error }] = useMutation(ADD_THOUGHT, {
     refetchQueries: [QUERY_THOUGHTS, "getThoughts", QUERY_ME, "me"],
   });
-
+  console.log(url);
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -26,7 +26,7 @@ const ThoughtForm = () => {
         variables: {
           thoughtText,
           thoughtAuthor: Auth.getProfile().data.username,
-          file: url,
+          url,
         },
       });
 
@@ -45,6 +45,7 @@ const ThoughtForm = () => {
     }
   };
   // this is where we will need to update react to handle url images within the upload and posting proccess... (daniel)
+  const myPropString = "stringfu";
   return (
     <div>
       <h3>What's on your mind?</h3>
@@ -73,7 +74,10 @@ const ThoughtForm = () => {
               ></textarea>
             </div>
 
-            <Chunked> </Chunked>
+            <Chunked
+            myPropString={myPropString}
+            setUrl={setUrl}
+            > </Chunked>
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">

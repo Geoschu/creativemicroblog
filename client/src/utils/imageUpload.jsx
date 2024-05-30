@@ -5,7 +5,7 @@ import { useState } from "react";
 const CLOUD_NAME = "dag7i28e3";
 const UPLOAD_PRESET = "writerBlocPreset";
 
-const Chunked = () => {
+const Chunked = ({myPropString, setUrl}) => {
   const [file, setFile] = useState(null);
   const [uploading, setUploading] = useState(false);
   const [uploadComplete, setUploadComplete] = useState(false);
@@ -69,7 +69,7 @@ const Chunked = () => {
           setUploading(false);
 
           const fetchResponse = await response.json();
-          setCldResponse(fetchResponse);
+          setUrl(fetchResponse.url);
           console.info("File upload complete.");
         }
       } catch (error) {
@@ -94,6 +94,9 @@ const Chunked = () => {
         {uploading ? "Uploading..." : "Upload"}
         {console.log(cldResponse)}
       </button>
+      <div>
+        {myPropString}
+      </div>
     </>
   );
 };
