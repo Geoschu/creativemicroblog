@@ -49,6 +49,7 @@ const resolvers = {
     },
     addThought: async (parent, { thoughtText, url }, context) => {
       if (context.user) {
+        console.log("this should be" + url);
         const thought = await Thought.create({
           thoughtText,
           thoughtAuthor: context.user.username,
