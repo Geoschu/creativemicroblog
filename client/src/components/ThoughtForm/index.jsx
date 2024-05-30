@@ -74,7 +74,6 @@ const ThoughtForm = () => {
             </div>
 
             <Chunked
-            myPropString={myPropString}
             setUrl={setUrl}
             > </Chunked>
 
