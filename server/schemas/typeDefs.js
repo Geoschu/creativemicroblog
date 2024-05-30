@@ -12,6 +12,7 @@ const typeDefs = `
     _id: ID
     thoughtText: String
     thoughtAuthor: String
+    url: String
     likes: Int!
     createdAt: String
     comments: [Comment]!
@@ -40,7 +41,7 @@ const typeDefs = `
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addThought(thoughtText: String!): Thought
+    addThought(thoughtText: String!, url: String!): Thought
     addComment(thoughtId: ID!, commentText: String!): Thought
     removeThought(thoughtId: ID!): Thought
     removeComment(thoughtId: ID!, commentId: ID!): Thought

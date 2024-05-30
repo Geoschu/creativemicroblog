@@ -11,22 +11,22 @@ import Auth from "../../utils/auth";
 
 const ThoughtForm = () => {
   const [thoughtText, setThoughtText] = useState("");
-
+  const [url, setUrl] = useState("");
   const [characterCount, setCharacterCount] = useState(0);
   // something like set media and mediaState for form submit
   const [addThought, { error }] = useMutation(ADD_THOUGHT, {
     refetchQueries: [QUERY_THOUGHTS, "getThoughts", QUERY_ME, "me"],
   });
-
+  // console.log(url);
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    console.log(url);
     try {
       const { data } = await addThought({
         variables: {
           thoughtText,
           thoughtAuthor: Auth.getProfile().data.username,
-          file: url,
+          url,
         },
       });
 
@@ -73,7 +73,9 @@ const ThoughtForm = () => {
               ></textarea>
             </div>
 
-            <Chunked> </Chunked>
+            <Chunked
+            setUrl={setUrl}
+            > </Chunked>
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">

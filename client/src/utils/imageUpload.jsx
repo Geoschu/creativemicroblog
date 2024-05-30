@@ -5,7 +5,7 @@ import { useState } from "react";
 const CLOUD_NAME = "dag7i28e3";
 const UPLOAD_PRESET = "writerBlocPreset";
 
-const Chunked = () => {
+const Chunked = ({ setUrl }) => {
   const [file, setFile] = useState(null);
   const [uploading, setUploading] = useState(false);
   const [uploadComplete, setUploadComplete] = useState(false);
@@ -69,7 +69,7 @@ const Chunked = () => {
           setUploading(false);
 
           const fetchResponse = await response.json();
-          setCldResponse(fetchResponse);
+          setUrl(fetchResponse.url);
           console.info("File upload complete.");
         }
       } catch (error) {
@@ -101,39 +101,42 @@ const Chunked = () => {
 export default Chunked;
 
 // this might be a viable other method that would be more consistant with an mvp, ill work on implmentation in the morning... my eyes are too tired rn.
-const uploadImage = () => {
-  cloudinary.openUploadWidget(
-    { cloudName: 'your-cloud-name', uploadPreset: 'your-upload-preset' },
-    (error, result) => {
-      if (result.event === 'success') {
-        console.log('Image URL:', result.info.secure_url);
-        // Save the URL to the state or pass it to a component
-      }
-    }
-  );
-};
-import React, { useState } from 'react';
 
-const ImageUpload = () => {
-  const [imageUrl, setImageUrl] = useState('');
 
-  const uploadImage = () => {
-    cloudinary.openUploadWidget(
-      { cloudName: 'your-cloud-name', uploadPreset: 'your-upload-preset' },
-      (error, result) => {
-        if (result.event === 'success') {
-          setImageUrl(result.info.secure_url);
-        }
-      }
-    );
-  };
+// const uploadImage = () => {
+//   cloudinary.openUploadWidget(
+//     { cloudName: 'your-cloud-name', uploadPreset: 'your-upload-preset' },
+//     (error, result) => {
+//       if (result.event === 'success') {
+//         console.log('Image URL:', result.info.secure_url);
+//         // Save the URL to the state or pass it to a component
+//       }
+//     }
+//   );
+// };
+// import React, { useState } from 'react';
 
-  return (
-    <div>
-      <button onClick={uploadImage}>Upload Image</button>
-      {imageUrl && <img src={imageUrl} alt="Uploaded" />}
-    </div>
-  );
-};
+// const ImageUpload = () => {
+//   const [imageUrl, setImageUrl] = useState('');
 
-export default ImageUpload;
+//   const uploadImage = () => {
+//     cloudinary.openUploadWidget(
+//       { cloudName: 'your-cloud-name', uploadPreset: 'your-upload-preset' },
+//       (error, result) => {
+//         if (result.event === 'success') {
+//           setImageUrl(result.info.secure_url);
+//         }
+//       }
+//     );
+//   };
+
+//   return (
+//     <div>
+//       <button onClick={uploadImage}>Upload Image</button>
+//       {imageUrl && <img src={imageUrl} alt="Uploaded" />}
+//     </div>
+//   );
+// };
+
+// export default ImageUpload;
+

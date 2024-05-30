@@ -10,7 +10,7 @@ import { Outlet } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import LikeButton from './components/LikeButton';
+// import LikeButton from './components/LikeButton';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
