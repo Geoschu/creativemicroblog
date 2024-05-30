@@ -19,7 +19,7 @@ const thoughtSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
-  file: {
+  url: {
     type: String,
     required: false,
   },
