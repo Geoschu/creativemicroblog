@@ -17,10 +17,10 @@ const ThoughtForm = () => {
   const [addThought, { error }] = useMutation(ADD_THOUGHT, {
     refetchQueries: [QUERY_THOUGHTS, "getThoughts", QUERY_ME, "me"],
   });
-  console.log(url);
+  // console.log(url);
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    console.log(url);
     try {
       const { data } = await addThought({
         variables: {
@@ -45,7 +45,6 @@ const ThoughtForm = () => {
     }
   };
   // this is where we will need to update react to handle url images within the upload and posting proccess... (daniel)
-  const myPropString = "stringfu";
   return (
     <div>
       <h3>What's on your mind?</h3>

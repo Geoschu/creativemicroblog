@@ -9,6 +9,7 @@ export const QUERY_USER = gql`
       thoughts {
         _id
         thoughtText
+        url
         createdAt
       }
     }
@@ -21,6 +22,7 @@ export const QUERY_THOUGHTS = gql`
       _id
       thoughtText
       thoughtAuthor
+      url
       createdAt
     }
   }
@@ -32,6 +34,7 @@ export const QUERY_SINGLE_THOUGHT = gql`
       _id
       thoughtText
       thoughtAuthor
+      url
       createdAt
       comments {
         _id
@@ -53,6 +56,7 @@ export const QUERY_ME = gql`
         _id
         thoughtText
         thoughtAuthor
+        url
         createdAt
       }
     }
