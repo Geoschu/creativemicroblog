@@ -43,11 +43,12 @@ const SingleThought = () => {
         </blockquote>
         <img
           src={thought.url}
-          display="grid"
-          margin-left="auto"
-          margin-right="auto"
-          width="350"
-        />
+          style={{
+            display: 'block',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',}}
+        ></img>
       </div>
 
       <div className="my-5">
