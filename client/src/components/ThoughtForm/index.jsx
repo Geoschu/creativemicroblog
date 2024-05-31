@@ -7,8 +7,6 @@ import { QUERY_THOUGHTS, QUERY_ME } from "../../utils/queries";
 import Chunked from "../../utils/imageUpload";
 import Auth from "../../utils/auth";
 
-
-
 const ThoughtForm = () => {
   const [thoughtText, setThoughtText] = useState("");
   const [url, setUrl] = useState("");
@@ -47,7 +45,7 @@ const ThoughtForm = () => {
   // this is where we will need to update react to handle url images within the upload and posting proccess... (daniel)
   return (
     <div>
-      <h3>What's on your mind?</h3>
+      <h3 style={{ textAlign: "center" }}>What would you like to Create?</h3>
 
       {Auth.loggedIn() ? (
         <>
@@ -73,15 +71,17 @@ const ThoughtForm = () => {
               ></textarea>
             </div>
 
-            <Chunked
-            setUrl={setUrl}
-            > </Chunked>
-
-            <div className="col-12 col-lg-3">
+            <Chunked setUrl={setUrl}>
               <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Thought
+                Post
               </button>
-            </div>
+            </Chunked>
+
+            {/* <div className="col-12 col-lg-3">
+              <button className="btn btn-primary btn-block py-3" type="submit">
+                Post
+              </button>
+            </div> */}
             {error && (
               <div className="col-12 my-3 bg-danger text-white p-3">
                 {error.message}

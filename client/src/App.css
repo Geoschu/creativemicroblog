@@ -1090,7 +1090,7 @@ a:hover {
 
 .card .card-header {
   padding: 0.375rem;
-  background-color: #2d3e50;
+  background-color: #dddddd;
   color: #d9e9e8;
 }
 
@@ -1722,6 +1722,7 @@ header {
 }
 
 .custom-header {
+  background-color: #dddddd;
   display: flex;
   justify-content: center;
 }
