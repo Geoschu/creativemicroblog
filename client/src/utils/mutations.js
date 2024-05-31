@@ -57,7 +57,7 @@ export const ADD_COMMENT = gql`
   }
 `;
 
-import { useMutation, gql } from '@apollo/client';
+//import { useMutation, gql } from '@apollo/client';
 
 const FOLLOW_USER = gql`
   mutation FollowUser($id: ID!) {
@@ -81,34 +81,34 @@ const UNFOLLOW_USER = gql`
   }
 `;
 
-function UserProfile({ userId }) {
-  const [followUser] = useMutation(FOLLOW_USER);
-  const [unfollowUser] = useMutation(UNFOLLOW_USER);
+// function UserProfile({ userId }) {
+//   const [followUser] = useMutation(FOLLOW_USER);
+//   const [unfollowUser] = useMutation(UNFOLLOW_USER);
 
-  const handleFollow = async () => {
-    try {
-      const { data } = await followUser({ variables: { id: userId } });
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+//   const handleFollow = async () => {
+//     try {
+//       const { data } = await followUser({ variables: { id: userId } });
+//       console.log(data);
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
 
-  const handleUnfollow = async () => {
-    try {
-      const { data } = await unfollowUser({ variables: { id: userId } });
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+//   const handleUnfollow = async () => {
+//     try {
+//       const { data } = await unfollowUser({ variables: { id: userId } });
+//       console.log(data);
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
 
-  return (
-    <div>
-      {/* Render user profile */}
-      <button onClick={handleFollow}>Follow</button>
-      <button onClick={handleUnfollow}>Unfollow</button>
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       {/* Render user profile */}
+//       <button onClick={handleFollow}>Follow</button>
+//       <button onClick={handleUnfollow}>Unfollow</button>
+//     </div>
+//   );
+// }
 
