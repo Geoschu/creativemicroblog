@@ -6,6 +6,7 @@ const typeDefs = `
     password: String
     profPic: String
     thoughts: [Thought]!
+    followers: [User]
   }
 
   type Thought {

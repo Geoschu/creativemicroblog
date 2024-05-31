@@ -101,6 +101,8 @@ const Chunked = ({ setUrl }) => {
 export default Chunked;
 
 // this might be a viable other method that would be more consistant with an mvp, ill work on implmentation in the morning... my eyes are too tired rn.
+
+
 // const uploadImage = () => {
 //   cloudinary.openUploadWidget(
 //     { cloudName: 'your-cloud-name', uploadPreset: 'your-upload-preset' },
@@ -137,3 +139,4 @@ export default Chunked;
 // };
 
 // export default ImageUpload;
+
