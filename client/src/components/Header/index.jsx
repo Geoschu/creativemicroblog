@@ -10,18 +10,29 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
+    <header
+      className="bg-primary text-light mb-4 py-3 flex-row align-center custom-header"
+      style={{ display: "flex", justifyContent: "center" }}
+    >
+      {" "}
       <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
           <Link className="text-light" to="/">
             <img
               src={banner}
               alt="PixLit"
-              style={{ width: "500px", height: "170px" }}
+              style={{ width: "500px", height: "100px" }}
             />
           </Link>
         </div>
-        <div>
+        {/* <div>
           {Auth.loggedIn() ? (
             <>
               <Link className="btn btn-lg btn-info m-2" to="/me">
@@ -41,7 +52,7 @@ const Header = () => {
               </Link>
             </>
           )}
-        </div>
+        </div> */}
       </div>
     </header>
   );
