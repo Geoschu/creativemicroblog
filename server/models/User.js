@@ -19,6 +19,10 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
+  profPic: {
+    type: String,
+    required: false
+  },
   thoughts: [
     {
       type: Schema.Types.ObjectId,
