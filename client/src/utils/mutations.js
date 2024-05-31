@@ -102,14 +102,14 @@ function UserProfile({ userId }) {
     }
   };
 
-  return (
-    <div>
-      {/* Render user profile */}
-      <button onClick={handleFollow}>Follow</button>
-      <button onClick={handleUnfollow}>Unfollow</button>
-    </div>
-  );
-}
+//   return (
+//     // <div>
+//     //   {/* Render user profile */}
+//     //   <button onClick={handleFollow}>Follow</button>
+//     //   <button onClick={handleUnfollow}>Unfollow</button>
+//     // </div>
+//   // );
+// }
 
 
 
