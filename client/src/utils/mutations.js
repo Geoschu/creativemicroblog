@@ -56,7 +56,7 @@ export const ADD_COMMENT = gql`
   }
 `;
 
-import { useMutation, gql } from '@apollo/client';
+
 
 const FOLLOW_USER = gql`
   mutation FollowUser($id: ID!) {
@@ -91,6 +91,7 @@ function UserProfile({ userId }) {
     } catch (error) {
       console.error(error);
     }
+  }
   };
 
   const handleUnfollow = async () => {
