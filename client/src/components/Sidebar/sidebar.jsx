@@ -12,19 +12,27 @@ const Sidebar = () => {
       {Auth.loggedIn() ? (
         <>
           <Link className="btn btn-lg btn-info m-2" to="/me">
-            {Auth.getProfile().data.username}'s profile
+            <span className="text-white font-bold py-2 px-4 rounded bg-green-500 hover:bg-blue-700">
+              {Auth.getProfile().data.username}'s profile
+            </span>
           </Link>
           <button className="btn btn-lg btn-light m-2" onClick={logout}>
-            Logout
+            <span className="text-black font-bold py-2 px-4 rounded bg-gray-300 hover:bg-gray-400">
+              Logout
+            </span>
           </button>
         </>
       ) : (
         <>
           <Link className="btn btn-lg btn-info m-2" to="/login">
-            Login
+            <span className="text-white font-bold py-2 px-4 rounded bg-green-500 hover:bg-blue-700">
+              Login
+            </span>
           </Link>
           <Link className="btn btn-lg btn-light m-2" to="/signup">
-            Signup
+            <span className="text-black font-bold py-2 px-4 rounded bg-gray-300 hover:bg-gray-400">
+              Signup
+            </span>
           </Link>
         </>
       )}

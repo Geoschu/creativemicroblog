@@ -39,7 +39,7 @@ const ThoughtList = ({
               <p>{thought.thoughtText}</p>
             </div>
             <Link
-              className="btn btn-primary btn-block btn-squared"
+              className="inline-block bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "
               to={`/thoughts/${thought._id}`}
             >
               Join the discussion on this thought.
