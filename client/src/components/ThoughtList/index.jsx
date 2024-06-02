@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const ThoughtList = ({
   thoughts,
@@ -23,13 +23,13 @@ const ThoughtList = ({
                   to={`/profiles/${thought.thoughtAuthor}`}
                 >
                   {thought.thoughtAuthor} <br />
-                  <span style={{ fontSize: '1rem' }}>
+                  <span style={{ fontSize: "1rem" }}>
                     had this thought on {thought.createdAt}
                   </span>
                 </Link>
               ) : (
                 <>
-                  <span style={{ fontSize: '1rem' }}>
+                  <span style={{ fontSize: "1rem" }}>
                     You had this thought on {thought.createdAt}
                   </span>
                 </>

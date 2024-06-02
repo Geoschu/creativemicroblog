@@ -920,7 +920,7 @@ a:hover {
 
 /* BACKGROUND UTILS */
 .bg-primary {
-  background-color: #57cc99 !important;
+  background-color: #bfd8bd !important;
 }
 
 .bg-info {
@@ -992,7 +992,7 @@ a:hover {
 }
 
 .btn.btn-squared {
-  border-radius: 0;
+  border-radius: 10;
 }
 
 .btn.btn-sm {
