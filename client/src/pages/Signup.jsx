@@ -1,17 +1,18 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
-
-import Auth from '../utils/auth';
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../utils/mutations";
+import Chunked from "../utils/imageUpload";
+import Auth from "../utils/auth";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    username: '',
-    email: '',
-    password: '',
+    username: "",
+    email: "",
+    password: "",
   });
+  const [profPic, setUrl] = useState("");
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
@@ -29,7 +30,7 @@ const Signup = () => {
 
     try {
       const { data } = await addUser({
-        variables: { ...formState },
+        variables: { ...formState, profPic },
       });
 
       Auth.login(data.addUser.token);
@@ -46,7 +47,7 @@ const Signup = () => {
           <div className="card-body">
             {data ? (
               <p>
-                Success! You may now head{' '}
+                Success! You may now head{" "}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
@@ -75,9 +76,10 @@ const Signup = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
+                <Chunked setUrl={setUrl}>Choose a Profile Photo</Chunked>
                 <button
                   className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                   type="submit"
                 >
                   Submit

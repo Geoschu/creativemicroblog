@@ -13,12 +13,13 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
+  mutation addUser($username: String!, $email: String!, $password: String!, $profPic: String!) {
+    addUser(username: $username, email: $email, password: $password, profPic: $profPic) {
       token
       user {
         _id
         username
+        profPic
       }
     }
   }
@@ -57,7 +58,6 @@ export const ADD_COMMENT = gql`
 `;
 
 
-
 const FOLLOW_USER = gql`
   mutation FollowUser($id: ID!) {
     followUser(id: $id) {
@@ -80,37 +80,28 @@ const UNFOLLOW_USER = gql`
   }
 `;
 
-function UserProfile({ userId }) {
-  const [followUser] = useMutation(FOLLOW_USER);
-  const [unfollowUser] = useMutation(UNFOLLOW_USER);
+// function UserProfile({ userId }) {
+//   const [followUser] = useMutation(FOLLOW_USER);
+//   const [unfollowUser] = useMutation(UNFOLLOW_USER);
 
-  const handleFollow = async () => {
-    try {
-      const { data } = await followUser({ variables: { id: userId } });
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
-  }
-  };
+  // const handleFollow = async () => {
+  //   try {
+  //     const { data } = await followUser({ variables: { id: userId } });
+  //     console.log(data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
-  const handleUnfollow = async () => {
-    try {
-      const { data } = await unfollowUser({ variables: { id: userId } });
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+//   const handleUnfollow = async () => {
+//     try {
+//       const { data } = await unfollowUser({ variables: { id: userId } });
+//       console.log(data);
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
 
-//   return (
-//     // <div>
-//     //   {/* Render user profile */}
-//     //   <button onClick={handleFollow}>Follow</button>
-//     //   <button onClick={handleUnfollow}>Unfollow</button>
-//     // </div>
-//   // );
-// }
-
+  
 
 
