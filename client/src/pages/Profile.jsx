@@ -62,4 +62,17 @@ const Profile = () => {
   );
 };
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookSquare, faTwitterSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
+const FollowComponent = () => {
+  return (
+    <div className="follow-container">
+      <FontAwesomeIcon icon={faFacebookSquare} size="2x" />
+      <FontAwesomeIcon icon={faTwitterSquare} size="2x" />
+      <FontAwesomeIcon icon={faInstagram} size="2x" />
+    </div>
+  );
+};
+
 export default Profile;
