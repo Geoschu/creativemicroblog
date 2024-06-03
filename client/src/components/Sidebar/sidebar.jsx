@@ -8,7 +8,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="sidebar">
+    <div className="sidebar flex flex-col">
       {Auth.loggedIn() ? (
         <>
           <Link className="btn btn-lg btn-info m-2" to="/me">

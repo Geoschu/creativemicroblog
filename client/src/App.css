@@ -1731,3 +1731,29 @@ form .form-input {
   @apply transition-opacity duration-500 ease-in-out;
   animation: fadeIn 1s;
 }
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+}
+
+.sidebar {
+  position: fixed; /* Add this line */
+  left: 0; /* Add this line */
+  flex: 0 0 1%; /* adjust this value to change the width of the sidebar */
+  height: 100vh; /* make the sidebar full height */
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    height: auto;
+    flex: 0 0 100%;
+  }
+}

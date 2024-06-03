@@ -43,10 +43,12 @@ function App() {
     <ApolloProvider client={client}>
       <div className="flex-column justify-flex-start min-100-vh">
         <Header />
-        <Sidebar />
-        <div className="container">
-          <Outlet />
-          <div className></div>
+        <div className="main-content flex-row">
+          <Sidebar />
+          <div className="container">
+            <Outlet />
+            <div className></div>
+          </div>
         </div>
         <Footer />
       </div>
