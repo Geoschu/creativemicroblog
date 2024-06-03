@@ -1,14 +1,43 @@
 import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
+import { useState, useEffect } from "react";
+import logo from "../../assets/pixlit-logo3.svg";
 
 const Sidebar = () => {
+  const [isHeaderVisible, setHeaderVisible] = useState(true);
+
+  useEffect(() => {
+    const checkHeaderVisibility = () => {
+      const header = document.querySelector(".custom-header");
+      const headerRect = header.getBoundingClientRect();
+      setHeaderVisible(headerRect.top >= 0);
+    };
+
+    window.addEventListener("scroll", checkHeaderVisibility);
+
+    return () => {
+      window.removeEventListener("scroll", checkHeaderVisibility);
+    };
+  }, []);
+
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
 
   return (
-    <div className="sidebar flex flex-col">
+    <div
+      className={`sidebar flex flex-col justify-center items-center ${
+        !isHeaderVisible ? "full-height" : ""
+      }`}
+    >
+      {!isHeaderVisible && (
+        <img
+          src={logo}
+          alt="Logo"
+          style={{ width: "75%", height: "auto", padding: "10px" }}
+        />
+      )}
       {Auth.loggedIn() ? (
         <>
           <Link className="btn btn-lg btn-info m-2" to="/me">
