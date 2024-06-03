@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client';
 
 import ThoughtForm from '../components/ThoughtForm';
 import ThoughtList from '../components/ThoughtList';
+import FollowButton from './components/FollowButton';
 
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
@@ -74,5 +75,4 @@ const FollowComponent = () => {
     </div>
   );
 };
-
 export default Profile;
