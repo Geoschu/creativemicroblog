@@ -13,6 +13,7 @@ const typeDefs = `
     _id: ID
     thoughtText: String
     thoughtAuthor: String
+    profPic: String
     url: String
     likes: Int!
     createdAt: String

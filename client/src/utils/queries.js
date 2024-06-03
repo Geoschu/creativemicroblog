@@ -23,6 +23,7 @@ export const QUERY_THOUGHTS = gql`
       _id
       thoughtText
       thoughtAuthor
+      profPic
       url
       createdAt
     }
@@ -35,6 +36,7 @@ export const QUERY_SINGLE_THOUGHT = gql`
       _id
       thoughtText
       thoughtAuthor
+      profPic
       url
       createdAt
       comments {

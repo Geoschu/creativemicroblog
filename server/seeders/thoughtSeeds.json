@@ -1,42 +1,67 @@
 [
   {
-    "thoughtText": "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?",
-    "thoughtAuthor": "Brian Kernighan"
+    "thoughtText": "To truley understand pain.. one must only experience Texas in the summer",
+    "thoughtAuthor": "Daniel L",
+    "profPic": "http://res.cloudinary.com/dag7i28e3/image/upload/v1717406968/a9s3uyxfdcyebyg00nh3.jpg"
   },
   {
-    "thoughtText": "Some of the best programming is done on paper, really. Putting it into the computer is just a minor detail.",
-    "thoughtAuthor": "Max Kanat-Alexander"
+    "thoughtText": "It's right around here that I entered into a zen like trance while typing, knowing this is probably some of the last work i will do in this class",
+    "thoughtAuthor": "Daniel L",
+    "profPic": "http://res.cloudinary.com/dag7i28e3/image/upload/v1717406968/a9s3uyxfdcyebyg00nh3.jpg"
+  },
+  {
+    "thoughtText": "It's been a pleasure working with all of y'all, thanks for all the help and I wish everyone nothing but the best",
+    "thoughtAuthor": "Daniel L",
+    "profPic": "http://res.cloudinary.com/dag7i28e3/image/upload/v1717406968/a9s3uyxfdcyebyg00nh3.jpg"
+  },
+  {
+    "thoughtText": "How far has humanity really progressed over the last 40 years?",
+    "thoughtAuthor": "Brian Kernighan",
+    "profPic": "http://res.cloudinary.com/dag7i28e3/image/upload/v1717406567/lxfdjmarva4b09lslmgz.jpg"
+  },
+  {
+    "thoughtText": "Some of the best programming is done on paper, really. Putting it into the computer is just a minor detail. That's to say the deatil is the minor part about actually making sure your code works. Otherwise its just a hot stinky mess that makes you want to throw your laptop",
+    "thoughtAuthor": "Max Kanat-Alexander",
+    "profPic": "http://res.cloudinary.com/dag7i28e3/image/upload/v1717406654/k2uuzwmcjflupj56s0xx.jpg"
   },
   {
     "thoughtText": "When you don't create things, you become defined by your tastes rather than ability. Your tastes only narrow & exclude people. So create.",
-    "thoughtAuthor": "Why The Lucky Stiff"
+    "thoughtAuthor": "Hannah Whitworth",
+    "profPic": "http://res.cloudinary.com/dag7i28e3/image/upload/v1717406724/acrziejqxeiz3yvhlkny.jpg"
   },
   {
-    "thoughtText": "I'm not a great programmer; I'm just a good programmer with great habits.",
-    "thoughtAuthor": "Kent Beck"
+    "thoughtText": "I'm not a great programmer; I'm just really good at not going insane, the trick... i've been insane for years :)",
+    "thoughtAuthor": "Kent Beck",
+    "profPic": "http://res.cloudinary.com/dag7i28e3/image/upload/v1717406805/mjmnjvqek9uwewzu0cxq.jpg"
   },
   {
-    "thoughtText": "Walking on water and developing software from a specification are easy if both are frozen.",
-    "thoughtAuthor": "Edward V. Berard"
+    "thoughtText": "Sometimes I wonder if they really should of built a city in this swamp, devilishy hot in the the summer, humid all year long, its like they put people here to test thier capacity for punishment",
+    "thoughtAuthor": "Daniel L",
+    "profPic": "http://res.cloudinary.com/dag7i28e3/image/upload/v1717406968/a9s3uyxfdcyebyg00nh3.jpg"
   },
   {
     "thoughtText": "The most disastrous thing that you can ever learn is your first programming language.",
-    "thoughtAuthor": "Alan Kay"
+    "thoughtAuthor": "Alan Kay",
+    "profPic": "http://res.cloudinary.com/dag7i28e3/image/upload/v1717406896/ov76faywp7h22flnsoau.jpg"
   },
   {
     "thoughtText": "The most important property of a program is whether it accomplishes the intention of its user.",
-    "thoughtAuthor": "C.A.R. Hoare"
+    "thoughtAuthor": "Daniel L",
+    "profPic": "http://res.cloudinary.com/dag7i28e3/image/upload/v1717406968/a9s3uyxfdcyebyg00nh3.jpg"
   },
   {
     "thoughtText": "Delivering good software today is often better than perfect software tomorrow, so finish things and ship.",
-    "thoughtAuthor": "David Thomas"
+    "thoughtAuthor": "Kent Beck",
+    "profPic": "http://res.cloudinary.com/dag7i28e3/image/upload/v1717406805/mjmnjvqek9uwewzu0cxq.jpg"
   },
   {
     "thoughtText": "If you optimize everything, you will always be unhappy.",
-    "thoughtAuthor": "Donald Knuth"
+    "thoughtAuthor": "Daniel L",
+    "profPic": "http://res.cloudinary.com/dag7i28e3/image/upload/v1717406968/a9s3uyxfdcyebyg00nh3.jpg"
   },
   {
     "thoughtText": "It's not a bug; it's an undocumented feature.",
-    "thoughtAuthor": "Lernantino"
+    "thoughtAuthor": "Kent Beck",
+    "profPic": "http://res.cloudinary.com/dag7i28e3/image/upload/v1717406805/mjmnjvqek9uwewzu0cxq.jpg"
   }
 ]

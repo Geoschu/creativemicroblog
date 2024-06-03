@@ -14,6 +14,10 @@ const thoughtSchema = new Schema({
     required: true,
     trim: true,
   },
+  profPic : {
+    type: String,
+    required: false,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
