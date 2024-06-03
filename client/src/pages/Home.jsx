@@ -42,7 +42,7 @@ const Home = () => {
           )}
         </div>
       </div>
-      {isCustomHeaderVisible ? null : (
+      {/* {isCustomHeaderVisible ? null : (
         <header
           className="text-white bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 p-5 text-center fixed bottom-0 w-full"
           style={{
@@ -55,7 +55,7 @@ const Home = () => {
           </h1>
           <p className="mt-2 text-xl"> Find your inspiration here</p>
         </header>
-      )}
+      )} */}
     </main>
   );
 };
