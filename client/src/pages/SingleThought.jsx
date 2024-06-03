@@ -20,16 +20,37 @@ const SingleThought = () => {
     return <div className="text-center text-lg text-white-500">Loading...</div>;
   }
   return (
+
+      <h3 className="card-header bg-dark text-light p-2 m-0">
+        {thought.thoughtAuthor} <br />
+        <img
+        src={thought.profPic}
+        alt="/src/assets/userplaceholder.svg"
+        style={{
+          borderRadius: "50%",
+          width: "50px",
+          height: "50px",
+          objectFit: "cover",
+          marginRight: "10px",
+        }}
+      />
+        <span style={{ fontSize: "1rem" }}>
+          had this thought on {thought.createdAt}
+        </span>
+
     <div className="my-3 rounded shadow-md min-h-screen">
       <h3 className="text-center text-lg text-white-500 p-2 m-0">
         {thought.thoughtAuthor} <br />
         <span className="text-sm">{thought.createdAt}</span>
+
       </h3>
       <div className="bg-black py-4">
         <blockquote className="p-4 text-lg italic border-2 border-gray-300 leading-7">
           {thought.thoughtText}
         </blockquote>
+
         <img src={thought.url} className="block mx-auto h-screen"></img>
+
       </div>
 
       <div className="my-5">

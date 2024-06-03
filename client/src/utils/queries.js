@@ -25,6 +25,7 @@ export const QUERY_THOUGHTS = gql`
       thoughtAuthor
       profPic
       url
+      profPic
       createdAt
     }
   }
@@ -38,6 +39,7 @@ export const QUERY_SINGLE_THOUGHT = gql`
       thoughtAuthor
       profPic
       url
+      profPic
       createdAt
       comments {
         _id
@@ -61,6 +63,7 @@ export const QUERY_ME = gql`
         thoughtText
         thoughtAuthor
         url
+        Profpic
         createdAt
       }
     }
@@ -69,7 +72,7 @@ export const QUERY_ME = gql`
 
 //import { gql, useMutation } from '@apollo/client';
 
-const LIKE_POST = gql`
+export const LIKE_POST = gql`
   mutation LikePost($postId: ID!, $userId: ID!) {
     likePost(postId: $postId, userId: $userId) {
       id
@@ -78,7 +81,7 @@ const LIKE_POST = gql`
   }
 `;
 
-const DELETE_LIKE = gql`
+export const DELETE_LIKE = gql`
   mutation DeleteLike($postId: ID!, $userId: ID!) {
     unlikePost(postId: $postId, userId: $userId) {
       id

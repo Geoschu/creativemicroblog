@@ -5,11 +5,14 @@ import ThoughtForm from "../components/ThoughtForm";
 
 import { QUERY_THOUGHTS } from "../utils/queries";
 
+
 import { useState, useEffect } from "react";
 
+
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_THOUGHTS);
+  const { loading, data } = useQuery(QUERY_THOUGHTS, QUERY_USER);
   const thoughts = data?.thoughts || [];
+
   const [isCustomHeaderVisible, setCustomHeaderVisible] = useState(true);
 
   useEffect(() => {
@@ -26,6 +29,7 @@ const Home = () => {
     };
   }, []);
   // bg-gradient-to-r from-green-400 to-blue-500
+
   return (
     <main className="rounded shadow-md min-h-screen">
       <div className="flex flex-col items-center justify-center">
@@ -36,9 +40,11 @@ const Home = () => {
           {loading ? (
             <div className="text-center text-lg text-gray-500">Loading...</div>
           ) : (
+
             <div className="text-center text-white">
               <ThoughtList thoughts={thoughts} title="Find your inspiration" />
             </div>
+
           )}
         </div>
       </div>
