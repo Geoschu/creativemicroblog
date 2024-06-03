@@ -8,53 +8,34 @@ import CommentForm from "../components/CommentForm";
 import { QUERY_SINGLE_THOUGHT } from "../utils/queries";
 
 const SingleThought = () => {
-  // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { thoughtId } = useParams();
 
   const { loading, data } = useQuery(QUERY_SINGLE_THOUGHT, {
-    // pass URL parameter
     variables: { thoughtId: thoughtId },
   });
 
   const thought = data?.thought || {};
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="text-center text-lg text-white-500">Loading...</div>;
   }
   return (
-    <div className="my-3">
-      <h3 className="card-header bg-dark text-light p-2 m-0">
+    <div className="my-3 rounded shadow-md min-h-screen">
+      <h3 className="text-center text-lg text-white-500 p-2 m-0">
         {thought.thoughtAuthor} <br />
-        <span style={{ fontSize: "1rem" }}>
-          had this thought on {thought.createdAt}
-        </span>
+        <span className="text-sm">{thought.createdAt}</span>
       </h3>
-      <div className="bg-light py-4">
-        <blockquote
-          className="p-4"
-          style={{
-            fontSize: "1.5rem",
-            fontStyle: "italic",
-            border: "2px dotted #1a1a1a",
-            lineHeight: "1.5",
-          }}
-        >
+      <div className="bg-black py-4">
+        <blockquote className="p-4 text-lg italic border-2 border-gray-300 leading-7">
           {thought.thoughtText}
         </blockquote>
-        <img
-          src={thought.url}
-          style={{
-            display: 'block',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100vh',}}
-        ></img>
+        <img src={thought.url} className="block mx-auto h-screen"></img>
       </div>
 
       <div className="my-5">
         <CommentList comments={thought.comments} />
       </div>
-      <div className="m-3 p-4" style={{ border: "1px dotted #1a1a1a" }}>
+      <div className="m-3 p-4 border-2 border-gray-300">
         <CommentForm thoughtId={thought._id} />
       </div>
     </div>
