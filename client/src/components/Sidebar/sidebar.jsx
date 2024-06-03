@@ -12,7 +12,7 @@ const Sidebar = () => {
       {Auth.loggedIn() ? (
         <>
           <Link className="btn btn-lg btn-info m-2" to="/me">
-            <span className="text-white font-bold py-2 px-4 rounded bg-green-500 hover:bg-blue-700">
+            <span className="text-white font-bold py-2 px-4 rounded bg--500 hover:bg-blue-700">
               {Auth.getProfile().data.username}'s profile
             </span>
           </Link>

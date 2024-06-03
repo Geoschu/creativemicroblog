@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import Auth from "../../utils/auth";
 
-import banner from "../../assets/pixlit-header2.svg";
+import banner from "../../assets/pixlit-header3.svg";
 
 const Header = () => {
   const logout = (event) => {
