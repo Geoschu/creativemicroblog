@@ -1,4 +1,2 @@
-# creativemicroblog
-"A micro-blogging platform for writers and artists"
-
-Reddit/Twitter for creatives… ever come across writers block, well not anymore. Welcome to the online creative group designed to help you conquer your creative problems. Interact with other creatives to boost ideas and find new connections in the creative work, post your work for other artists to collaborate on, and finally put an end to writers block as we know it.
+# PixLit
+PixLit is a vibrant micro-blogging platform designed specifically for writers and artists. It's a unique space where creativity meets collaboration, helping you overcome writer's block and spark new ideas. With PixLit, you can share your work, interact with other creatives, and find inspiration in a supportive community. Whether you're looking to collaborate on projects or simply seeking fresh perspectives, PixLit is your go-to platform. Say goodbye to creative stagnation and hello to a world of endless inspiration with PixLit.
