@@ -31,16 +31,20 @@ const Sidebar = () => {
         !isHeaderVisible ? "full-height" : ""
       }`}
     >
-      <img
-        src={logo}
-        alt="Logo"
-        style={{
-          width: "75%",
-          height: "auto",
-          padding: "10px",
-          display: isHeaderVisible ? "none" : "block",
-        }}
-      />
+      <Link to="/">
+        <img
+          src={logo}
+          alt="Logo"
+          style={{
+            width: "75%",
+            height: "auto",
+            padding: "10px",
+            display: isHeaderVisible ? "none" : "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
+        />
+      </Link>
       {Auth.loggedIn() ? (
         <>
           <Link className="btn btn-lg btn-info m-2" to="/me">
