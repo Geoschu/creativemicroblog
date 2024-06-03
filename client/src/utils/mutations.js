@@ -57,7 +57,6 @@ export const ADD_COMMENT = gql`
   }
 `;
 
-//import { useMutation, gql } from '@apollo/client';
 
 const FOLLOW_USER = gql`
   mutation FollowUser($id: ID!) {
@@ -85,14 +84,14 @@ const UNFOLLOW_USER = gql`
 //   const [followUser] = useMutation(FOLLOW_USER);
 //   const [unfollowUser] = useMutation(UNFOLLOW_USER);
 
-//   const handleFollow = async () => {
-//     try {
-//       const { data } = await followUser({ variables: { id: userId } });
-//       console.log(data);
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
+  // const handleFollow = async () => {
+  //   try {
+  //     const { data } = await followUser({ variables: { id: userId } });
+  //     console.log(data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
 //   const handleUnfollow = async () => {
 //     try {
@@ -103,12 +102,6 @@ const UNFOLLOW_USER = gql`
 //     }
 //   };
 
-//   return (
-//     <div>
-//       {/* Render user profile */}
-//       <button onClick={handleFollow}>Follow</button>
-//       <button onClick={handleUnfollow}>Unfollow</button>
-//     </div>
-//   );
-// }
+  
+
 

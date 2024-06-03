@@ -5,7 +5,7 @@ import { useState } from "react";
 const CLOUD_NAME = "dag7i28e3";
 const UPLOAD_PRESET = "writerBlocPreset";
 
-const Chunked = ({ setUrl }) => {
+const Chunked = ({ setUrl, children }) => {
   const [file, setFile] = useState(null);
   const [uploading, setUploading] = useState(false);
   const [uploadComplete, setUploadComplete] = useState(false);
@@ -88,20 +88,29 @@ const Chunked = ({ setUrl }) => {
   };
 
   return (
-    <>
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={uploadFile} disabled={uploading}>
-        {uploading ? "Uploading..." : "Upload"}
-        {console.log(cldResponse)}
-      </button>
-    </>
+    <div className="col-12 col-lg-3 flex flex-col">
+      <div className="chunked-upload-container">
+        <input
+          type="file"
+          onChange={handleFileChange}
+          className="form-input w-full"
+        />
+        <button
+          onClick={uploadFile}
+          disabled={uploading}
+          className="btn btn-primary btn-block py-3 mt-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        >
+          {uploading ? "Uploading..." : "Upload"}
+        </button>
+      </div>
+      {children}
+    </div>
   );
 };
 
 export default Chunked;
 
 // this might be a viable other method that would be more consistant with an mvp, ill work on implmentation in the morning... my eyes are too tired rn.
-
 
 // const uploadImage = () => {
 //   cloudinary.openUploadWidget(
@@ -139,4 +148,3 @@ export default Chunked;
 // };
 
 // export default ImageUpload;
-

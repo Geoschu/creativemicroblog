@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import Auth from '../../utils/auth';
+import Auth from "../../utils/auth";
+
+import banner from "../../assets/pixlit-header3.svg";
 
 const Header = () => {
   const logout = (event) => {
@@ -8,15 +10,29 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
+    <header
+      className="bg-primary text-light mb-4 py-3 flex-row align-center custom-header"
+      style={{ display: "flex", justifyContent: "center" }}
+    >
+      {" "}
       <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
           <Link className="text-light" to="/">
-            <h1 className="m-0">Creative Bloc</h1>
+            <img
+              src={banner}
+              alt="PixLit"
+              style={{ width: "500px", height: "100px" }}
+            />
           </Link>
-          <p className="m-0">Get out of your own head, and into someone else's.</p>
         </div>
-        <div>
+        {/* <div>
           {Auth.loggedIn() ? (
             <>
               <Link className="btn btn-lg btn-info m-2" to="/me">
@@ -36,7 +52,7 @@ const Header = () => {
               </Link>
             </>
           )}
-        </div>
+        </div> */}
       </div>
     </header>
   );
