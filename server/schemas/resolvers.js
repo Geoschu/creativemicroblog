@@ -1,21 +1,19 @@
-const { User, Thought } = require('../models');
-const { signToken, AuthenticationError } = require('../utils/auth');
+const { User, Thought } = require("../models");
+const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-
     users: async () => {
-      
       return await User.find({});
     },
-    user: async (_, {id}) => {
+    user: async (_, { id }) => {
       return await User.findById(id);
     },
     users: async () => {
-      return User.find().populate('thoughts');
+      return User.find().populate("thoughts");
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('thoughts');
+      return User.findOne({ username }).populate("thoughts");
     },
     thoughts: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -26,7 +24,7 @@ const resolvers = {
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('thoughts');
+        return User.findOne({ _id: context.user._id }).populate("thoughts");
       }
       throw AuthenticationError;
     },
@@ -73,7 +71,7 @@ const resolvers = {
         return thought;
       }
       throw AuthenticationError;
-      ('You need to be logged in!');
+      ("You need to be logged in!");
     },
     addComment: async (parent, { thoughtId, commentText }, context) => {
       if (context.user) {
@@ -126,47 +124,46 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-    
-    // followUser: async (_, { id }, context) => {
-    //   // Find the current user and the target user
-    //   const currentUser = context.user;
-    //   const targetUser = await User.findById(id);
 
-    //   if (!currentUser ||!targetUser) {
-    //     throw new Error('User not found');
-    //   }
 
-    //   // Add the target user to the current user's followers array
-    //   currentUser.followers.push(targetUser._id);
-    //   await currentUser.save();
+    //   followUser: async (_, { id }, context) => {
+    //     // Find the current user and the target user
+    //     const currentUser = context.user;
+    //     const targetUser = await User.findById(id);
 
-    //   // Optionally, add the current user to the target user's following array
-    //   targetUser.following.push(currentUser._id);
-    //   await targetUser.save();
+    //     if (!currentUser ||!targetUser) {
+    //       throw new Error('User not found');
+    //     }
 
-    //   return currentUser;
-    // },
-    // unfollowUser: async (_, { id }, context) => {
-    //   // Similar to followUser, but remove the target user from the current user's followers array
-    //   const currentUser = context.currentUser;
-    //   const targetUser = await User.findById(id);
+    //     // Add the target user to the current user's followers array
+    //     currentUser.followers.push(targetUser._id);
+    //     await currentUser.save();
 
-    //   if (!currentUser ||!targetUser) {
-    //     throw new Error('User not found');
-    //   }
+    //     // Optionally, add the current user to the target user's following array
+    //     targetUser.following.push(currentUser._id);
+    //     await targetUser.save();
 
-    //   const index = currentUser.followers.indexOf(targetUser._id);
-    //   if (index > -1) {
-    //     currentUser.followers.splice(index, 1);
-    //   }
+    //     return currentUser;
+    //   },
+    //   unfollowUser: async (_, { id }, context) => {
+    //     // Similar to followUser, but remove the target user from the current user's followers array
+    //     const currentUser = context.currentUser;
+    //     const targetUser = await User.findById(id);
 
-    //   await currentUser.save();
+    //     if (!currentUser ||!targetUser) {
+    //       throw new Error('User not found');
+    //     }
 
-    //   return currentUser;
-    // },
+    //     const index = currentUser.followers.indexOf(targetUser._id);
+    //     if (index > -1) {
+    //       currentUser.followers.splice(index, 1);
+    //     }
+
+    //     await currentUser.save();
+
+    //     return currentUser;
+    //   },
   },
-};  
-  
-
+};
 
 module.exports = resolvers;
