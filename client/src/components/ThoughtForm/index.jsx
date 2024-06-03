@@ -59,45 +59,47 @@ const ThoughtForm = () => {
           >
             Character Count: {characterCount}/280
           </p>
-          <form
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline flex flex-col md:flex-row md:items-center"
-            onSubmit={handleFormSubmit}
-          >
-            <div className="col-12 col-lg-9 flex-grow">
-              <textarea
-                name="thoughtText"
-                placeholder="Here's a new thought..."
-                value={thoughtText}
-                className="form-input w-100"
-                style={{ lineHeight: "1.5", resize: "vertical" }}
-                onChange={handleChange}
-              ></textarea>
-            </div>
-
-            <div className="flex flex-col md:flex-col md:justify-end md:items-end md:space-y-2">
-              <div className="flex flex-col md:flex-row md:space-x-2">
-                <Chunked setUrl={setUrl}>
-                  <button
-                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full md:w-auto mb-2 md:mb-0"
-                    type="button"
-                  >
-                    Choose Photo
-                  </button>
-                </Chunked>
-                <button
-                  className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full md:w-auto mt-2 md:mt-0"
-                  type="submit"
-                >
-                  Post
-                </button>
+          <div className="thought-form-container">
+            <form
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline flex flex-col md:flex-row md:items-center"
+              onSubmit={handleFormSubmit}
+            >
+              <div className="col-12 col-lg-9 flex-grow">
+                <textarea
+                  name="thoughtText"
+                  placeholder="Here's a new thought..."
+                  value={thoughtText}
+                  className="form-input w-100"
+                  style={{ lineHeight: "1.5", resize: "vertical" }}
+                  onChange={handleChange}
+                ></textarea>
               </div>
-              {error && (
-                <div className="my-3 p-3 bg-red-500 text-white">
-                  {error.message}
+
+              <div className="flex flex-col md:flex-col md:justify-end md:items-end md:space-y-2">
+                <div className="flex flex-col md:flex-row md:space-x-2">
+                  <Chunked setUrl={setUrl}>
+                    {/* <button
+                      className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full md:w-auto mb-2 md:mb-0"
+                      type="button"
+                    >
+                      Choose Photo
+                    </button> */}
+                  </Chunked>
+                  <button
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full md:w-auto mt-2 md:mt-0"
+                    type="submit"
+                  >
+                    Post
+                  </button>
                 </div>
-              )}
-            </div>
-          </form>
+                {error && (
+                  <div className="my-3 p-3 bg-red-500 text-white">
+                    {error.message}
+                  </div>
+                )}
+              </div>
+            </form>
+          </div>
         </>
       ) : (
         <p>
@@ -108,8 +110,5 @@ const ThoughtForm = () => {
     </div>
   );
 };
-
-
-
 
 export default ThoughtForm;

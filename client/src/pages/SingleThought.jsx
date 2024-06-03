@@ -1,87 +1,76 @@
-// Import the `useParams()` hook
-import { useParams } from "react-router-dom";
-import { useQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
 
-import CommentList from "../components/CommentList";
-import CommentForm from "../components/CommentForm";
-
-import { QUERY_SINGLE_THOUGHT } from "../utils/queries";
-
-const SingleThought = () => {
-  // Use `useParams()` to retrieve value of the route parameter `:profileId`
-  const { thoughtId } = useParams();
-
-  const { loading, data } = useQuery(QUERY_SINGLE_THOUGHT, {
-    // pass URL parameter
-    variables: { thoughtId: thoughtId },
-  });
-
-  const thought = data?.thought || {};
-
-  if (loading) {
-    return <div>Loading...</div>;
+const ThoughtList = ({
+  thoughts,
+  title,
+  showTitle = true,
+  showUsername = true,
+}) => {
+  if (!thoughts.length) {
+    return <h3>No Post Yet</h3>;
   }
-  return (
-    <div className="my-3">
-      {/* <img
-        src={thought.profPic}
-        alt="/src/assets/userplaceholder.svg"
-        style={{
-          borderRadius: "50%",
-          width: "50px",
-          height: "50px",
-          objectFit: "cover",
-          marginRight: "10px",
-        }}
-      /> */}
-      <h3 className="card-header bg-dark text-light p-2 m-0">
-        {thought.thoughtAuthor} <br />
-        <img
-        src={thought.profPic}
-        alt="/src/assets/userplaceholder.svg"
-        style={{
-          borderRadius: "50%",
-          width: "50px",
-          height: "50px",
-          objectFit: "cover",
-          marginRight: "10px",
-        }}
-      />
-        <span style={{ fontSize: "1rem" }}>
-          had this thought on {thought.createdAt}
-        </span>
-      </h3>
-      <div className="bg-light py-4">
-        <blockquote
-          className="p-4"
-          style={{
-            fontSize: "1.5rem",
-            fontStyle: "italic",
-            border: "2px dotted #1a1a1a",
-            lineHeight: "1.5",
-          }}
-        >
-          {thought.thoughtText}
-        </blockquote>
-        <img
-          src={thought.url}
-          style={{
-            display: "block",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100vh",
-          }}
-        ></img>
-      </div>
 
-      <div className="my-5">
-        <CommentList comments={thought.comments} />
-      </div>
-      <div className="m-3 p-4" style={{ border: "1px dotted #1a1a1a" }}>
-        <CommentForm thoughtId={thought._id} />
-      </div>
+  return (
+    <div>
+      {showTitle && <h3>{title}</h3>}
+      {thoughts &&
+        thoughts.map((thought) => (
+          <div
+            key={thought._id}
+            className="card mb-3 bg-white rounded shadow-md border-green-500 border-2 flex flex-col justify-between"
+          >
+            <h4 className="card-header bg-primary text-light p-2 m-0">
+              {showUsername ? (
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <img
+                    src={thought.profPic}
+                    //alt="/src/assets/userplaceholder.svg"
+                    style={{
+                      borderRadius: "50%",
+                      width: "50px",
+                      height: "50px",
+                      objectFit: "cover",
+                      marginRight: "10px",
+                    }}
+                  />
+                  <div>
+                    <Link
+                      className="text-light"
+                      to={`/profiles/${thought.thoughtAuthor}`}
+                    >
+                      {thought.thoughtAuthor} <br />
+                      <span style={{ fontSize: "1rem" }}>
+                        {thought.createdAt}
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <span style={{ fontSize: "1rem" }}>
+                    You made this post on {thought.createdAt}
+                  </span>
+                </>
+              )}
+            </h4>
+            <div className="card-body bg-light p-2">
+              <p>{thought.thoughtText}</p>
+              <div>
+                <img src={thought.url} height="200" />
+              </div>
+            </div>
+            <div className="flex justify-end">
+              <Link
+                className="inline-block bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                to={`/thoughts/${thought._id}`}
+              >
+                reply
+              </Link>
+            </div>
+          </div>
+        ))}
     </div>
   );
 };
 
-export default SingleThought;
+export default ThoughtList;
