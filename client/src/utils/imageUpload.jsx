@@ -88,19 +88,21 @@ const Chunked = ({ setUrl, children }) => {
   };
 
   return (
-    <div className="col-12 col-lg-3">
-      <input
-        type="file"
-        onChange={handleFileChange}
-        className="form-input w-100"
-      />
-      <button
-        onClick={uploadFile}
-        disabled={uploading}
-        className="btn btn-primary btn-block py-3"
-      >
-        {uploading ? "Uploading..." : "Upload"}
-      </button>
+    <div className="col-12 col-lg-3 flex flex-col">
+      <div className="chunked-upload-container">
+        <input
+          type="file"
+          onChange={handleFileChange}
+          className="form-input w-full"
+        />
+        <button
+          onClick={uploadFile}
+          disabled={uploading}
+          className="btn btn-primary btn-block py-3 mt-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        >
+          {uploading ? "Uploading..." : "Upload"}
+        </button>
+      </div>
       {children}
     </div>
   );
@@ -109,7 +111,6 @@ const Chunked = ({ setUrl, children }) => {
 export default Chunked;
 
 // this might be a viable other method that would be more consistant with an mvp, ill work on implmentation in the morning... my eyes are too tired rn.
-
 
 // const uploadImage = () => {
 //   cloudinary.openUploadWidget(
@@ -147,4 +148,3 @@ export default Chunked;
 // };
 
 // export default ImageUpload;
-
