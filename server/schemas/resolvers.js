@@ -127,43 +127,43 @@ const resolvers = {
       throw AuthenticationError;
     },
     
-    followUser: async (_, { id }, context) => {
-      // Find the current user and the target user
-      const currentUser = context.user;
-      const targetUser = await User.findById(id);
+    // followUser: async (_, { id }, context) => {
+    //   // Find the current user and the target user
+    //   const currentUser = context.user;
+    //   const targetUser = await User.findById(id);
 
-      if (!currentUser ||!targetUser) {
-        throw new Error('User not found');
-      }
+    //   if (!currentUser ||!targetUser) {
+    //     throw new Error('User not found');
+    //   }
 
-      // Add the target user to the current user's followers array
-      currentUser.followers.push(targetUser._id);
-      await currentUser.save();
+    //   // Add the target user to the current user's followers array
+    //   currentUser.followers.push(targetUser._id);
+    //   await currentUser.save();
 
-      // Optionally, add the current user to the target user's following array
-      targetUser.following.push(currentUser._id);
-      await targetUser.save();
+    //   // Optionally, add the current user to the target user's following array
+    //   targetUser.following.push(currentUser._id);
+    //   await targetUser.save();
 
-      return currentUser;
-    },
-    unfollowUser: async (_, { id }, context) => {
-      // Similar to followUser, but remove the target user from the current user's followers array
-      const currentUser = context.currentUser;
-      const targetUser = await User.findById(id);
+    //   return currentUser;
+    // },
+    // unfollowUser: async (_, { id }, context) => {
+    //   // Similar to followUser, but remove the target user from the current user's followers array
+    //   const currentUser = context.currentUser;
+    //   const targetUser = await User.findById(id);
 
-      if (!currentUser ||!targetUser) {
-        throw new Error('User not found');
-      }
+    //   if (!currentUser ||!targetUser) {
+    //     throw new Error('User not found');
+    //   }
 
-      const index = currentUser.followers.indexOf(targetUser._id);
-      if (index > -1) {
-        currentUser.followers.splice(index, 1);
-      }
+    //   const index = currentUser.followers.indexOf(targetUser._id);
+    //   if (index > -1) {
+    //     currentUser.followers.splice(index, 1);
+    //   }
 
-      await currentUser.save();
+    //   await currentUser.save();
 
-      return currentUser;
-    },
+    //   return currentUser;
+    // },
   },
 };  
   

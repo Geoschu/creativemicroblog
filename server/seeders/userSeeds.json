@@ -2,40 +2,24 @@
   {
     "username": "Myles Javillonar",
     "email": "myles@myles.com",
-    "password": "password11",
-    "followers": [
-      {
-        "username": "Max Kanat-Alexander"
-  }]
+    "password": "password11"
       },
   {
     "username": "George S",
     "email": "george@george.com",
-    "password": "password12",
-    "followers": [
-      {
-        "username": "Max Kanat-Alexander"
-  }]
+    "password": "password12"
   },
   {
     "username": "Daniel L",
     "email": "Daniel@gmail.com",
     "password": "password",
-    "profPic" : "http://res.cloudinary.com/dag7i28e3/image/upload/v1717406968/a9s3uyxfdcyebyg00nh3.jpg",
-    "followers": [
-      {
-        "username": "Max Kanat-Alexander"
-  }]
+    "profPic" : "http://res.cloudinary.com/dag7i28e3/image/upload/v1717406968/a9s3uyxfdcyebyg00nh3.jpg"
       },
   {
     "username": "Brian Kernighan",
     "email": "bkernighan@techfriends.dev",
     "password": "password01",
-    "profPic": "http://res.cloudinary.com/dag7i28e3/image/upload/v1717406567/lxfdjmarva4b09lslmgz.jpg",
-    "followers": [
-      {
-        "username": "Max Kanat-Alexander"
-  }]
+    "profPic": "http://res.cloudinary.com/dag7i28e3/image/upload/v1717406567/lxfdjmarva4b09lslmgz.jpg"
   },
   {
     "username": "Max Kanat-Alexander",

@@ -6,19 +6,6 @@ const typeDefs = `
     password: String
     profPic: String
     thoughts: [Thought]!
-    followers: [ID!] @relation(name: "Followers")
-    following: [ID!] @relation(name: "Following")
-  }
-
-  type Follower {
-    _id: ID
-    followerId: ID 
-    followedId: ID
-  }
-
-  enum FollowStatus {
-    FOLLOWING
-    NOT_FOLLOWING
   }
 
   type Thought {
@@ -51,9 +38,6 @@ const typeDefs = `
     thought(thoughtId: ID!): Thought
     me: User
     getUser(id: ID): User
-    getFollowers(userId: ID): [ID!]  
-    getFollowing(userId: ID): [ID!]  
-    isFollowing(followerId: ID!, followedId: ID): FollowStatus!
   }
 
   type Mutation {
@@ -65,8 +49,6 @@ const typeDefs = `
     removeComment(thoughtId: ID!, commentId: ID!): Thought
     likeThought(thoughtId: ID!, userId: ID): Thought
     unlikeThought(thoughtId: ID!, userId: ID): Thought
-    followUser(followerId: ID!, followedId: ID): User
-    unfollowUser(followerId: ID!, followedId: ID): User
   }
 `;
 
