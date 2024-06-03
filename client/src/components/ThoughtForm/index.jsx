@@ -25,6 +25,7 @@ const ThoughtForm = () => {
           thoughtText,
           thoughtAuthor: Auth.getProfile().data.username,
           url,
+          profPic: Auth.getProfile().data.profPic,
         },
       });
 

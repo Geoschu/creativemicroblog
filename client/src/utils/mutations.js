@@ -31,6 +31,7 @@ export const ADD_THOUGHT = gql`
       _id
       thoughtText
       thoughtAuthor
+      profPic
       createdAt
       url
       comments {

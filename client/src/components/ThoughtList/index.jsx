@@ -21,11 +21,10 @@ const ThoughtList = ({
           >
             <h4 className="card-header bg-primary text-light p-2 m-0">
               {showUsername ? (
-
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <img
-                    src="/src/assets/userplaceholder.svg"
-                    alt="User profile"
+                    src={thought.profPic}
+                    //alt="/src/assets/userplaceholder.svg"
                     style={{
                       borderRadius: "50%",
                       width: "50px",
@@ -50,7 +49,6 @@ const ThoughtList = ({
                 <>
                   <span style={{ fontSize: "1rem" }}>
                     You made this post on {thought.createdAt}
-
                   </span>
                 </>
               )}

@@ -6,7 +6,6 @@ const typeDefs = `
     password: String
     profPic: String
     thoughts: [Thought]!
-    followers: [User]
   }
 
   type Thought {
@@ -14,6 +13,7 @@ const typeDefs = `
     thoughtText: String
     thoughtAuthor: String
     url: String
+    profPic: String
     likes: Int!
     createdAt: String
     comments: [Comment]!
@@ -37,6 +37,7 @@ const typeDefs = `
     thoughts(username: String): [Thought]
     thought(thoughtId: ID!): Thought
     me: User
+    getUser(id: ID): User
   }
 
   type Mutation {
@@ -48,8 +49,6 @@ const typeDefs = `
     removeComment(thoughtId: ID!, commentId: ID!): Thought
     likeThought(thoughtId: ID!, userId: ID): Thought
     unlikeThought(thoughtId: ID!, userId: ID): Thought
-    followUser(followerId: ID!, followedId: ID): User
-    unfollowUser(followerId: ID!, followedId: ID): User
   }
 `;
 
