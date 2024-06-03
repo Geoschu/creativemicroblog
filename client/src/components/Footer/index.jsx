@@ -12,13 +12,13 @@ const Footer = () => {
           </button>
         )}
         <div className="flex justify-center">
-          <header className="text-white bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 p-1 text-center fixed bottom-0 w-full z-10">
+          <header className="text-white bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 p-0 text-center fixed bottom-0 w-full z-10">
             <div className="flex flex-col items-center">
-              <h1 className="text-3xl font-bold tracking-wide">
+              <h1 className="text-2xl font-bold tracking-wide">
                 welcome to PixLit
                 <span className="ml-2 text-xl">Find your inspiration here</span>
               </h1>
-              <h4>
+              <h4 className="text-sm">
                 Made with{" "}
                 <span
                   className="emoji"

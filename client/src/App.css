@@ -1840,3 +1840,22 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+
+.thought-form-container button,
+.chunked-upload-container button {
+  width: 100%; /* make the buttons take up the full width of their container */
+  height: 50px; /* set a fixed height for the buttons */
+  margin-bottom: 10px; /* add some space between the buttons */
+}
+
+.thought-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.thought-form-container button,
+.chunked-upload-container button {
+  width: 100%; /* make the buttons take up the full width of their container */
+  height: 50px; /* set a fixed height for the buttons */
+  margin-bottom: 10px; /* add some space between the buttons */
+}
