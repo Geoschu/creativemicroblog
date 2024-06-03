@@ -1,34 +1,32 @@
-import { useQuery } from '@apollo/client';
+import { useQuery } from "@apollo/client";
 
-import ThoughtList from '../components/ThoughtList';
-import ThoughtForm from '../components/ThoughtForm';
+import ThoughtList from "../components/ThoughtList";
+import ThoughtForm from "../components/ThoughtForm";
 
-import { QUERY_THOUGHTS } from '../utils/queries';
+import { QUERY_THOUGHTS } from "../utils/queries";
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_THOUGHTS);
   const thoughts = data?.thoughts || [];
 
   return (
-    <main>
-      <div className="flex-row justify-center">
-        <div
-          className="col-12 col-md-10 mb-3 p-3"
-          style={{ border: '1px dotted #1a1a1a' }}
-        >
+    <main className="bg-gradient-to-r from-green-400 to-blue-500 min-h-screen">
+      <div className="flex flex-col items-center justify-center">
+        <div className="w-full md:w-3/4 lg:w-1/2 p-4 my-4 bg-white rounded shadow-md border-green-500 border-2">
           <ThoughtForm />
         </div>
-        <div className="col-12 col-md-8 mb-3">
+        <div className="w-full md:w-3/4 lg:w-1/2 p-4 my-4 bg-white rounded shadow-md">
           {loading ? (
-            <div>Loading...</div>
+            <div className="text-center text-lg text-gray-500">Loading...</div>
           ) : (
-            <ThoughtList
-              thoughts={thoughts}
-              title="Some Feed for Thought(s)..."
-            />
+            <ThoughtList thoughts={thoughts} title="Find inspiration" />
           )}
         </div>
       </div>
+      <header className="text-white bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 p-5 text-center">
+        <h1 className="text-4xl font-bold tracking-wide">Welcome to PixLit</h1>
+        <p className="mt-2 text-xl">Find your inspiration here</p>
+      </header>
     </main>
   );
 };

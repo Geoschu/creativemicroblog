@@ -5,7 +5,7 @@ import { useState } from "react";
 const CLOUD_NAME = "dag7i28e3";
 const UPLOAD_PRESET = "writerBlocPreset";
 
-const Chunked = ({ setUrl }) => {
+const Chunked = ({ setUrl, children }) => {
   const [file, setFile] = useState(null);
   const [uploading, setUploading] = useState(false);
   const [uploadComplete, setUploadComplete] = useState(false);
@@ -88,13 +88,21 @@ const Chunked = ({ setUrl }) => {
   };
 
   return (
-    <>
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={uploadFile} disabled={uploading}>
+    <div className="col-12 col-lg-3">
+      <input
+        type="file"
+        onChange={handleFileChange}
+        className="form-input w-100"
+      />
+      <button
+        onClick={uploadFile}
+        disabled={uploading}
+        className="btn btn-primary btn-block py-3"
+      >
         {uploading ? "Uploading..." : "Upload"}
-        {console.log(cldResponse)}
       </button>
-    </>
+      {children}
+    </div>
   );
 };
 

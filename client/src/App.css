@@ -5,7 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
- html {
+html {
   line-height: 1.15;
   /* 1 */
   -webkit-text-size-adjust: 100%;
@@ -187,9 +187,9 @@ select {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
@@ -197,9 +197,9 @@ button,
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -208,9 +208,9 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type='button']:-moz-focusring,
-[type='reset']:-moz-focusring,
-[type='submit']:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -260,8 +260,8 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type='checkbox'],
-[type='radio'] {
+[type="checkbox"],
+[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -271,8 +271,8 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -280,7 +280,7 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type='search'] {
+[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
@@ -290,7 +290,7 @@ textarea {
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type='search']::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -356,9 +356,9 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol';
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-size: 16px;
   color: #1a1a1a;
 }
@@ -369,7 +369,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   margin: 0 0 0.5rem;
   line-height: 1.25;
 }
@@ -501,7 +501,7 @@ a:hover {
 }
 
 .mb-3 {
-  margin-bottom: 1rem !important;
+  @apply mb-12;
 }
 
 .mb-4 {
@@ -920,7 +920,7 @@ a:hover {
 
 /* BACKGROUND UTILS */
 .bg-primary {
-  background-color: #2d3e50 !important;
+  background-color: #fbfbfb !important;
 }
 
 .bg-info {
@@ -992,7 +992,7 @@ a:hover {
 }
 
 .btn.btn-squared {
-  border-radius: 0;
+  border-radius: 10;
 }
 
 .btn.btn-sm {
@@ -1084,31 +1084,22 @@ a:hover {
 }
 
 .card {
-  border: 1px solid #1a1a1a;
-  margin-bottom: 1rem;
+  @apply border border-gray-900 mb-4;
 }
-
 .card .card-header {
-  padding: 0.375rem;
-  background-color: #2d3e50;
-  color: #d9e9e8;
+  @apply p-1 bg-gray-200 text-gray-300;
 }
-
 .card .card-body {
-  padding: 0.375rem;
+  @apply p-1;
 }
-
 .card .card-footer {
-  border-top: 1px solid #1a1a1a;
-  padding: 0.375rem;
+  @apply border-t border-gray-900 p-1;
 }
-
 .card.card-rounded {
-  border-radius: 0.3rem;
+  @apply rounded-md;
 }
-
 .card.card-rounded .card-header {
-  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+  @apply rounded-t-md;
 }
 
 form {
@@ -1157,13 +1148,13 @@ form .form-input.form-input-squared {
   border-radius: 0;
 }
 
-form [type='checkbox'],
-form [type='radio'] {
+form [type="checkbox"],
+form [type="radio"] {
   display: inline-block;
 }
 
-label form [type='checkbox'],
-label form [type='radio'] {
+label form [type="checkbox"],
+label form [type="radio"] {
   display: inline-block;
 }
 
@@ -1259,7 +1250,7 @@ label form [type='radio'] {
   margin-right: -15px;
 }
 
-[class*='col-'] {
+[class*="col-"] {
   position: relative;
   width: 100%;
   padding-right: 15px;
@@ -1704,5 +1695,65 @@ label form [type='radio'] {
   }
   .align-content-center-xl {
     align-content: center;
+  }
+}
+
+.app {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-header {
+  background-color: #dddddd;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+form .form-input {
+  @apply transition-opacity duration-500 ease-in-out;
+  animation: fadeIn 1s;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+}
+
+.sidebar {
+  position: fixed; /* Add this line */
+  left: 0; /* Add this line */
+  flex: 0 0 1%; /* adjust this value to change the width of the sidebar */
+  height: 100vh; /* make the sidebar full height */
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    height: auto;
+    flex: 0 0 100%;
   }
 }
