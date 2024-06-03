@@ -1,8 +1,39 @@
 [
   {
+    "username": "Myles Javillonar",
+    "email": "myles@myles.com",
+    "password": "password11",
+    "followers": [
+      {
+        "username": "Max Kanat-Alexander"
+  }]
+      },
+  {
+    "username": "George S",
+    "email": "george@george.com",
+    "password": "password12",
+    "followers": [
+      {
+        "username": "Max Kanat-Alexander"
+  }]
+  },
+  {
+    "username": "Daniel L",
+    "email": "Daniel@daniel.com",
+    "password": "password13",
+    "followers": [
+      {
+        "username": "Max Kanat-Alexander"
+  }]
+      },
+  {
     "username": "Brian Kernighan",
     "email": "bkernighan@techfriends.dev",
-    "password": "password01"
+    "password": "password01",
+    "followers": [
+      {
+        "username": "Max Kanat-Alexander"
+  }]
   },
   {
     "username": "Max Kanat-Alexander",

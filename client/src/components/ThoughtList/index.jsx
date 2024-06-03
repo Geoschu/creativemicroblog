@@ -21,6 +21,7 @@ const ThoughtList = ({
           >
             <h4 className="card-header bg-primary text-light p-2 m-0">
               {showUsername ? (
+
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <img
                     src="/src/assets/userplaceholder.svg"
@@ -49,12 +50,16 @@ const ThoughtList = ({
                 <>
                   <span style={{ fontSize: "1rem" }}>
                     You made this post on {thought.createdAt}
+
                   </span>
                 </>
               )}
             </h4>
             <div className="card-body bg-light p-2">
               <p>{thought.thoughtText}</p>
+              <div>
+                <img src={thought.url} height="200" />
+              </div>
             </div>
             <div className="flex justify-end">
               <Link
