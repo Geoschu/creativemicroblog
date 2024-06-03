@@ -6,7 +6,19 @@ const typeDefs = `
     password: String
     profPic: String
     thoughts: [Thought]!
-    followers: [User]
+    followers: [ID!] @relation(name: "Followers")
+    following: [ID!] @relation(name: "Following")
+  }
+
+  type Follower {
+    _id: ID
+    followerId: ID 
+    followedId: ID
+  }
+
+  enum FollowStatus {
+    FOLLOWING
+    NOT_FOLLOWING
   }
 
   type Thought {
@@ -37,6 +49,10 @@ const typeDefs = `
     thoughts(username: String): [Thought]
     thought(thoughtId: ID!): Thought
     me: User
+    getUser(id: ID): User
+    getFollowers(userId: ID): [ID!]  
+    getFollowing(userId: ID): [ID!]  
+    isFollowing(followerId: ID!, followedId: ID): FollowStatus!
   }
 
   type Mutation {
