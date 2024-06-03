@@ -1763,6 +1763,7 @@ form .form-input {
   left: 0;
   flex: 0 0 1%;
   height: 100vh;
+  align-items: center;
   background-color: #f5f5f5; /* Add this line */
 }
 
