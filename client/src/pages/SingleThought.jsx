@@ -23,8 +23,30 @@ const SingleThought = () => {
   }
   return (
     <div className="my-3">
+      {/* <img
+        src={thought.profPic}
+        alt="/src/assets/userplaceholder.svg"
+        style={{
+          borderRadius: "50%",
+          width: "50px",
+          height: "50px",
+          objectFit: "cover",
+          marginRight: "10px",
+        }}
+      /> */}
       <h3 className="card-header bg-dark text-light p-2 m-0">
         {thought.thoughtAuthor} <br />
+        <img
+        src={thought.profPic}
+        alt="/src/assets/userplaceholder.svg"
+        style={{
+          borderRadius: "50%",
+          width: "50px",
+          height: "50px",
+          objectFit: "cover",
+          marginRight: "10px",
+        }}
+      />
         <span style={{ fontSize: "1rem" }}>
           had this thought on {thought.createdAt}
         </span>
@@ -44,10 +66,11 @@ const SingleThought = () => {
         <img
           src={thought.url}
           style={{
-            display: 'block',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100vh',}}
+            display: "block",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+          }}
         ></img>
       </div>
 

@@ -4,11 +4,11 @@ import ThoughtList from "../components/ThoughtList";
 import ThoughtForm from "../components/ThoughtForm";
 
 import { QUERY_THOUGHTS } from "../utils/queries";
-
+import { QUERY_USER } from "../utils/queries";
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_THOUGHTS);
+  const { loading, data } = useQuery(QUERY_THOUGHTS, QUERY_USER);
   const thoughts = data?.thoughts || [];
-
+  const users = data?.users || [];
   return (
     <main className="bg-gradient-to-r from-green-400 to-blue-500 min-h-screen">
       <div className="flex flex-col items-center justify-center">
@@ -19,7 +19,7 @@ const Home = () => {
           {loading ? (
             <div className="text-center text-lg text-gray-500">Loading...</div>
           ) : (
-            <ThoughtList thoughts={thoughts} title="Find inspiration" />
+            <ThoughtList thoughts={thoughts} users={users} title="Find inspiration" />
           )}
         </div>
       </div>

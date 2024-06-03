@@ -24,6 +24,7 @@ export const QUERY_THOUGHTS = gql`
       thoughtText
       thoughtAuthor
       url
+      profPic
       createdAt
     }
   }
@@ -36,6 +37,7 @@ export const QUERY_SINGLE_THOUGHT = gql`
       thoughtText
       thoughtAuthor
       url
+      profPic
       createdAt
       comments {
         _id
@@ -59,6 +61,7 @@ export const QUERY_ME = gql`
         thoughtText
         thoughtAuthor
         url
+        Profpic
         createdAt
       }
     }

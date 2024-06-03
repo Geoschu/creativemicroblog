@@ -61,7 +61,8 @@ const resolvers = {
         const thought = await Thought.create({
           thoughtText,
           thoughtAuthor: context.user.username,
-          url
+          url,
+          profPic: context.user.profPic
         });
 
         await User.findOneAndUpdate(

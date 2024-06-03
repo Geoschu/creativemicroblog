@@ -26,6 +26,7 @@ const typeDefs = `
     thoughtText: String
     thoughtAuthor: String
     url: String
+    profPic: String
     likes: Int!
     createdAt: String
     comments: [Comment]!
