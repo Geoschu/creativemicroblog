@@ -125,7 +125,6 @@ const resolvers = {
       throw AuthenticationError;
     },
 
-
     //   followUser: async (_, { id }, context) => {
     //     // Find the current user and the target user
     //     const currentUser = context.user;
