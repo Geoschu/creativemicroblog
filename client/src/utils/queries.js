@@ -10,6 +10,7 @@ export const QUERY_USER = gql`
       thoughts {
         _id
         thoughtText
+        profPic
         url
         createdAt
       }
@@ -25,7 +26,6 @@ export const QUERY_THOUGHTS = gql`
       thoughtAuthor
       profPic
       url
-      profPic
       createdAt
     }
   }
@@ -37,7 +37,6 @@ export const QUERY_SINGLE_THOUGHT = gql`
       _id
       thoughtText
       thoughtAuthor
-      profPic
       url
       profPic
       createdAt
@@ -63,7 +62,7 @@ export const QUERY_ME = gql`
         thoughtText
         thoughtAuthor
         url
-        Profpic
+        profPic
         createdAt
       }
     }
